@@ -1,5 +1,5 @@
 const Features = () => (
-  <section className="px-4 py-20 mx-auto max-w-7xl">
+  <section className="px-4 py-20 mx-auto max-w-7xl" id="features">
     <h2 className="mb-1 text-3xl font-extrabold leading-tight text-gray-900">Features</h2>
     <p className="mb-16 text-lg text-gray-500">Get insights to dig down into what's powering your growth the
       most.
