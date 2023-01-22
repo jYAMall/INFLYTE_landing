@@ -3,7 +3,7 @@
 import Link from 'next/link';
 
 const Navbar = () => (
-  <header aria-label="Site Header" className="fixed left-0 right-0 bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 z-10">
+  <header aria-label="Site Header" className="fixed left-0 right-0 bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 z-10">
     <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
       <div className="flex h-16 items-center justify-between">
         <div className="md:flex md:items-center md:gap-12">
