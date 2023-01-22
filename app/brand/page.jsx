@@ -1,13 +1,12 @@
-import Link from 'next/link';
-import Icon3M from 'assets/icons/3m.svg';
-import { TitleText } from 'components/CustomTexts';
+import { Features, Footer, Navbar, Hero, FAQ } from 'components';
 
 const BrandPage = () => (
-  <div>
-    <h1 className="text-black-50 font-bold text-2xl">Brand Page</h1>
-    <Link href="/">Back to Home</Link>
-    <Icon3M width={24} height={24} />
-    <TitleText>dasdas</TitleText>
+  <div className="bg-gradient-to-r from-blue-100 via-blue-300 to-blue-500">
+    <Navbar />
+    <Hero />
+    <Features />
+    <FAQ />
+    <Footer />
   </div>
 );
 

@@ -1,9 +1,12 @@
-import Link from 'next/link';
+import { FAQ, Features, Footer, Hero, Navbar } from 'components';
 
 const InfluencerPage = () => (
-  <div>
-    <h1 className="text-2xl text-cyan-900 font-bold">Influencer Page</h1>
-    <Link href="/">Back to home</Link>
+  <div className="bg-gradient-to-b from-pink-300 via-purple-300 to-indigo-400">
+    <Navbar />
+    <Hero />
+    <Features />
+    <FAQ />
+    <Footer />
   </div>
 );
 
