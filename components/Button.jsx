@@ -3,7 +3,8 @@ const Button = ({ children, onClick, href }) => (
   <a
     href={href}
     onClick={onClick}
-    className="group relative inline-flex items-center overflow-hidden rounded border border-current px-8 py-3 text-indigo-600 focus:outline-none focus:ring active:text-indigo-500"
+    target={href ? '_blank' : null}
+    className="group relative inline-flex items-center overflow-hidden rounded border border-current px-8 py-3 text-indigo-600 focus:outline-none focus:ring active:text-indigo-500" rel="noreferrer"
   >
     <span
       className="absolute left-0 -translate-x-full transition-transform group-hover:translate-x-4"
