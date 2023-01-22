@@ -14,6 +14,11 @@ const Navbar = () => {
     document.body.classList.toggle('overflow-hidden');
   };
 
+  const onClose = () => {
+    setIsOpen(false);
+    document.body.classList.remove('overflow-hidden');
+  };
+
   const mobileOpenMenuStyles = isOpen ? 'max-md:top-0 max-md:bottom-0 max-md:bg-white ' : '';
 
   return (
@@ -29,7 +34,7 @@ const Navbar = () => {
               Inflyte
             </Link>
           </div>
-
+          {/* Desktop Menu */}
           <div className="md:block hidden">
             <nav aria-label="Site Nav">
               <ul className="flex items-center gap-6 text-sm">
@@ -39,6 +44,7 @@ const Navbar = () => {
                         <a
                           className="text-black-500 transition hover:text-gray-500/75"
                           href={item.href}
+
                         >
                           {item.label}
                         </a>
@@ -57,13 +63,14 @@ const Navbar = () => {
         </div>
       </div>
       {
+         // Mobile Menu
         isOpen && (
         <div className="md:hidden flex flex-col items-center justify-center h-full">
           <nav aria-label="Site Nav">
             <ul className="flex flex-col items-center gap-12 text-2xl font-bold">
               {
                   navigation.map((item) => (
-                    <li key={item.label}>
+                    <li key={item.label} onClick={onClose}>
                       <a
                         className="text-black-500 transition hover:text-gray-500/75"
                         href={item.href}
