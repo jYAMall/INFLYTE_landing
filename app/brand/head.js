@@ -1,5 +1,5 @@
 const HeadBrand = () => (
-  <title>Brand</title>
+  <title>Inflyte - Brand</title>
 );
 
 export default HeadBrand;

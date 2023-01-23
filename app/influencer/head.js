@@ -1,5 +1,5 @@
 const HeadInfluencer = () => (
-  <title>Influencer</title>
+  <title>Inflyte - Influencer</title>
 );
 
 export default HeadInfluencer;

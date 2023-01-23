@@ -1,5 +1,23 @@
 import '../styles/globals.css';
 import { Sen } from '@next/font/google';
+import Script from 'next/script';
+import * as snippet from '@segment/snippet';
+
+// Segment setup
+function renderSnippet() {
+  const opts = {
+    apiKey: process.env.SEGMENT_API_KEY,
+    // note: the page option only covers SSR tracking.
+    // Page.js is used to track other events using `window.analytics.page()`
+    page: true,
+  };
+
+  if (process.env.NODE_ENV === 'development') {
+    return snippet.max(opts);
+  }
+
+  return snippet.min(opts);
+}
 
 const font = Sen({
   subsets: ['latin'],
@@ -15,7 +33,14 @@ const RootLayout = ({ children }) => (
     <head />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="/favicon.ico" />
-    <body>{children}</body>
+    <body>
+      {children}
+      <Script
+        id="segment-script"
+        dangerouslySetInnerHTML={{ __html: renderSnippet() }}
+      />
+      <Script src={`//code.tidio.co/${process.env.TIDIO_API_KEY}.js`} />
+    </body>
   </html>
 );
 

@@ -17,10 +17,10 @@ export const navigation = [
   },
   {
     label: 'Presentation',
-    href: '/presentation',
+    href: 'https://drive.google.com/file/d/1UXqu0w18SEDvkqXx7sXmC3NoizQp9DM5/view?usp=sharing',
   },
   {
     label: 'White Paper',
-    href: '/whitepaper',
+    href: '#',
   },
 ];
