@@ -14,9 +14,18 @@ const Navbar = () => {
     document.body.classList.toggle('overflow-hidden');
   };
 
-  const onClose = () => {
+  const onClose = (item) => {
     setIsOpen(false);
     document.body.classList.remove('overflow-hidden');
+    window.analytics.track(item.label, {
+      title: item.label,
+    });
+  };
+
+  const handleClick = (item) => {
+    window.analytics.track(item.label, {
+      title: item.label,
+    });
   };
 
   const mobileOpenMenuStyles = isOpen ? 'max-md:top-0 max-md:bottom-0 max-md:bg-white ' : '';
@@ -40,7 +49,7 @@ const Navbar = () => {
               <ul className="flex items-center gap-6 text-sm">
                 {
                     navigation.map((item) => (
-                      <li key={item.label}>
+                      <li key={item.label} onClick={() => handleClick(item)}>
                         <a
                           className="text-black-500 transition hover:text-gray-500/75"
                           href={item.href}
@@ -70,7 +79,7 @@ const Navbar = () => {
             <ul className="flex flex-col items-center gap-12 text-2xl font-bold">
               {
                   navigation.map((item) => (
-                    <li key={item.label} onClick={onClose}>
+                    <li key={item.label} onClick={() => onClose(item)}>
                       <a
                         className="text-black-500 transition hover:text-gray-500/75"
                         href={item.href}
