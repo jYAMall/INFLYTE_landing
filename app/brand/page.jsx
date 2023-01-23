@@ -1,4 +1,4 @@
-import { Features, Footer, Navbar, Hero, FAQ, Statistic } from 'sections';
+import { Features, Footer, Navbar, Hero, FAQ, Statistic, HowItWorks } from 'sections';
 import { API_URL } from 'utils/config';
 
 const getData = async () => {
@@ -11,13 +11,14 @@ const getData = async () => {
   return res.json();
 };
 const BrandPage = async () => {
-  const { brandHeroText } = await getData();
+  const { brand } = await getData();
   return (
     <div className="bg-gradient-to-r from-blue-100 via-blue-300 to-blue-500">
       <Navbar />
-      <Hero title={brandHeroText.title} subTitle={brandHeroText.subTitle} requestHref="https://docs.google.com/forms/d/e/1FAIpQLSfBwe-b6bK8caThCruhJAEJxHfixzw6NefJUD1i2Dkiweia7w/viewform" />
+      <Hero title={brand.hero.title} subTitle={brand.hero.subTitle} requestHref="https://docs.google.com/forms/d/e/1FAIpQLSfBwe-b6bK8caThCruhJAEJxHfixzw6NefJUD1i2Dkiweia7w/viewform" />
       <Statistic />
-      <Features />
+      <Features data={brand.features} />
+      <HowItWorks data={brand.steps} />
       <FAQ />
       <Footer />
     </div>

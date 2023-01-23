@@ -8,6 +8,10 @@ export const navigation = [
     href: '#features',
   },
   {
+    label: 'How it works',
+    href: '#how-it-works',
+  },
+  {
     label: 'FAQ',
     href: '#faq',
   },

@@ -4,6 +4,7 @@ import Footer from './Footer';
 import Hero from './Hero';
 import FAQ from './FAQ';
 import Statistic from './Statistic';
+import HowItWorks from './HowItWorks';
 
 export {
   Navbar,
@@ -12,4 +13,5 @@ export {
   Hero,
   FAQ,
   Statistic,
+  HowItWorks,
 };
