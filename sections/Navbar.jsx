@@ -32,7 +32,7 @@ const Navbar = () => {
 
   return (
     <header aria-label="Site Header" className={`
-    fixed left-0 right-0 z-10 ${mobileOpenMenuStyles}
+    fixed left-0 right-0 z-[9999999999] ${mobileOpenMenuStyles}
     bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10
     `}
     >
@@ -74,7 +74,7 @@ const Navbar = () => {
       {
          // Mobile Menu
         isOpen && (
-        <div className="md:hidden flex flex-col items-center justify-center h-full">
+        <div className="md:hidden flex flex-col items-center mt-5 h-full">
           <nav aria-label="Site Nav">
             <ul className="flex flex-col items-center gap-12 text-2xl font-bold">
               {

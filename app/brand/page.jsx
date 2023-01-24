@@ -1,8 +1,7 @@
 import { Features, Footer, Navbar, Hero, FAQ, Statistic, HowItWorks } from 'sections';
-import { API_URL } from 'utils/config';
 
 const getData = async () => {
-  const res = await fetch(`${API_URL}/data/info.json`);
+  const res = await fetch(`${process.env.API_URL}/data/info.json`);
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
     throw new Error('Failed to fetch data');
@@ -10,16 +9,24 @@ const getData = async () => {
 
   return res.json();
 };
+
+const requestHref = 'https://forms.gle/oBxFM7etmGK2dfh86';
 const BrandPage = async () => {
   const { brand } = await getData();
   return (
     <div className="bg-gradient-to-r from-blue-100 via-blue-300 to-blue-500">
       <Navbar />
-      <Hero title={brand.hero.title} subTitle={brand.hero.subTitle} requestHref="https://docs.google.com/forms/d/e/1FAIpQLSfBwe-b6bK8caThCruhJAEJxHfixzw6NefJUD1i2Dkiweia7w/viewform" />
-      <Statistic />
+      <Hero title={brand.hero.title} subTitle={brand.hero.subTitle} requestHref={requestHref} />
+      <Statistic
+        title={brand.stats.title}
+        subTitle={brand.stats.title}
+        leftSide={brand.stats.leftSide}
+        rightSide={brand.stats.rightSide}
+        requestHref={requestHref}
+      />
       <Features data={brand.features} />
       <HowItWorks data={brand.steps} />
-      <FAQ />
+      <FAQ data={brand.faq} />
       <Footer />
     </div>
   );

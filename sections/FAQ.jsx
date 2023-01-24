@@ -41,7 +41,7 @@ const Item = ({ title, children }) => {
   );
 };
 
-const FAQ = () => (
+const FAQ = ({ data }) => (
   <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20 " id="faq">
     <div className="max-w-xl sm:mx-auto lg:max-w-2xl">
       <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
@@ -53,22 +53,11 @@ const FAQ = () => (
         </p>
       </div>
       <div className="space-y-4">
-        <Item title="The quick, brown fox jumps over a lazy dog?">
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque rem aperiam, eaque ipsa quae.
-        </Item>
-        <Item title="The first mate and his Skipper too will do?">
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque rem aperiam, eaque ipsa quae.
-        </Item>
-        <Item title="Is the Space Pope reptilian!?">
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque rem aperiam, eaque ipsa quae.
-        </Item>
-        <Item title="How much money you got on you?">
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque rem aperiam, eaque ipsa quae.
-        </Item>
+        {data.map((item) => (
+          <Item key={item.title} title={item.question}>
+            {item.answer}
+          </Item>
+        ))}
       </div>
     </div>
   </div>

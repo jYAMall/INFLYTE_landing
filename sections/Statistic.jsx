@@ -1,11 +1,11 @@
-const Statistic = ({ requestHref }) => (
+const Statistic = ({ title, subTitle, leftSide, rightSide, requestHref }) => (
   <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20" id="about">
     <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
       <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
-        Find the perfect match for your brand with ease
+        {title}
       </h2>
       <p className="text-base text-gray-700 md:text-lg">
-        INFLYTE is a cutting-edge influencer marketing platform that connects advertisers with the most relevant influencers for their campaigns. With the use of smart contracts and artificial intelligence/machine learning (AI/ML), INFLYTE ensures secure transactions, advanced analytics, and influencer matching.
+        {subTitle}
       </p>
     </div>
     <div className="relative w-full p-px mx-auto mb-4 overflow-hidden transition-shadow duration-300 border rounded lg:mb-8 lg:max-w-4xl group hover:shadow-xl">
@@ -16,19 +16,21 @@ const Statistic = ({ requestHref }) => (
       <div className="relative flex flex-col items-center h-full py-10 duration-300 bg-white rounded-sm transition-color sm:items-stretch sm:flex-row">
         <div className="px-12 py-8">
           <h6 className="text-4xl text-center font-bold text-deep-purple-accent-400 sm:text-5xl">
-            100%
+
+            {leftSide.title}
           </h6>
           <p className="md:text-base mt-5">
-            Secure your campaign with our guarantee. Your budget is protected by a smart contract, ensuring that the task description is clearly outlined
+
+            {leftSide.subTitle}
           </p>
         </div>
         <div className="w-56 h-1 transition duration-300 transform bg-gray-300 rounded-full group-hover:bg-deep-purple-accent-400 group-hover:scale-110 sm:h-auto sm:w-1" />
         <div className="px-12 py-8">
           <h6 className="text-4xl text-center font-bold text-deep-purple-accent-400 sm:text-5xl">
-            5%
+            {rightSide.title}
           </h6>
           <p className="md:text-base mt-5">
-            Low fee for successful campaigns, your brand reputation is worth the investment.
+            {rightSide.subTitle}
           </p>
         </div>
       </div>
