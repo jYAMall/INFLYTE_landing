@@ -16,11 +16,15 @@ export const navigation = [
     href: '#faq',
   },
   {
+    label: 'Team',
+    href: '#team',
+  },
+  {
     label: 'Presentation',
     href: 'https://drive.google.com/file/d/1UXqu0w18SEDvkqXx7sXmC3NoizQp9DM5/view?usp=sharing',
   },
-  {
-    label: 'White Paper',
-    href: '#',
-  },
+  // {
+  //   label: 'White Paper',
+  //   href: '#',
+  // },
 ];

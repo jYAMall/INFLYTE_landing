@@ -5,6 +5,7 @@ import Hero from './Hero';
 import FAQ from './FAQ';
 import Statistic from './Statistic';
 import HowItWorks from './HowItWorks';
+import Team from './Team';
 
 export {
   Navbar,
@@ -14,4 +15,5 @@ export {
   FAQ,
   Statistic,
   HowItWorks,
+  Team,
 };

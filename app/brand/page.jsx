@@ -1,4 +1,4 @@
-import { Features, Footer, Navbar, Hero, FAQ, Statistic, HowItWorks } from 'sections';
+import { Features, Footer, Navbar, Hero, FAQ, Statistic, HowItWorks, Team } from 'sections';
 
 const getData = async () => {
   const res = await fetch(`${process.env.API_URL}/data/info.json`);
@@ -16,7 +16,7 @@ const BrandPage = async () => {
   return (
     <div className="bg-gradient-to-r from-blue-100 via-blue-300 to-blue-500">
       <Navbar />
-      <Hero title={brand.hero.title} subTitle={brand.hero.subTitle} requestHref={requestHref} />
+      <Hero title={brand.hero.title} subTitle={brand.hero.subTitle} requestHref={requestHref} heroImg={brand.hero.imgUrl} />
       <Statistic
         title={brand.stats.title}
         subTitle={brand.stats.title}
@@ -27,6 +27,7 @@ const BrandPage = async () => {
       <Features data={brand.features} />
       <HowItWorks data={brand.steps} />
       <FAQ data={brand.faq} />
+      <Team />
       <Footer />
     </div>
   );
