@@ -1,5 +1,5 @@
 import '../styles/globals.css';
-import { Sen } from '@next/font/google';
+import { Nunito_Sans } from '@next/font/google';
 import Script from 'next/script';
 import * as snippet from '@segment/snippet';
 
@@ -19,7 +19,7 @@ function renderSnippet() {
   return snippet.min(opts);
 }
 
-const font = Sen({
+const font = Nunito_Sans({
   subsets: ['latin'],
   weight: ['400', '700', '800'],
 });

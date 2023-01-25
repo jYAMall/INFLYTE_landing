@@ -6,14 +6,15 @@ const brand = {
     subTitle: 'Discover the right influencers for your brand and make a secure and transparent collaboration agreement using blockchain technology',
     shortBio: 'INFLYTE is a cutting-edge influencer marketing platform that connects advertisers with the most relevant influencers for their campaigns. With the use of smart contracts and artificial intelligence/machine learning (AI/ML), INFLYTE ensures secure transactions, advanced analytics, and influencer matching.\n Join INFLYTE now to gain an advantage in the upcoming era of decentralized influence marketing.',
     imgUrl: '/hero/brand_hero.png',
+    btnStyleType: 'blue',
   },
   features: [
     {
       title: 'Smart Contract Functionality',
       description: 'Our platform utilizes smart contracts to ensure secure, efficient, and transparent transactions.',
-      icon: '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">\n  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />\n</svg>\n',
-      iconColor: 'text-blue-500',
-      iconBgColor: 'bg-blue-100',
+      icon: '  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6"> <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" </svg>',
+      iconColor: 'text-purple-600',
+      iconBgColor: 'bg-purple-100',
     },
     {
       title: '24/7 Support',
@@ -121,6 +122,7 @@ const brand = {
   ],
   stats: {
     title: 'Find the perfect match for your brand with ease',
+    linkColor: 'text-blue-500',
     subTitle: ' INFLYTE is a cutting-edge influencer marketing platform that connects advertisers with the most relevant influencers for their campaigns. With the use of smart contracts and artificial intelligence/machine learning (AI/ML), INFLYTE ensures secure transactions, advanced analytics, and influencer matching.',
     leftSide: {
       title: '100%',
@@ -162,13 +164,15 @@ const BrandPage = () => {
   return (brand ? (
     <div className="bg-gradient-to-r from-blue-100 via-blue-300 to-blue-500">
       <Navbar />
-      <Hero title={brand.hero.title} subTitle={brand.hero.subTitle} requestHref={requestHref} heroImg={brand.hero.imgUrl} />
+      <Hero title={brand.hero.title} subTitle={brand.hero.subTitle} requestHref={requestHref} heroImg={brand.hero.imgUrl} btnStyleType={brand.hero.btnStyleType} />
       <Statistic
         title={brand.stats.title}
         subTitle={brand.stats.title}
         leftSide={brand.stats.leftSide}
         rightSide={brand.stats.rightSide}
         requestHref={requestHref}
+        linkColor={brand.stats.linkColor}
+
       />
       <Features data={brand.features} />
       <HowItWorks data={brand.steps} />

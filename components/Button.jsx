@@ -1,10 +1,18 @@
 
-const Button = ({ children, onClick, href }) => (
+const STYLE_TYPES = {
+  blue: 'text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 ',
+  purple: 'text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80',
+};
+const Button = ({ children, onClick, href, styleType = 'blue' }) => (
   <a
     href={href}
     onClick={onClick}
     target={href ? '_blank' : null}
-    className="group relative inline-flex items-center overflow-hidden rounded border border-current px-8 py-3 text-indigo-600 focus:outline-none focus:ring active:text-indigo-500" rel="noreferrer"
+    className={`
+      ${STYLE_TYPES[styleType]}
+      group relative inline-flex items-center overflow-hidden rounded px-8 py-3
+    `}
+    rel="noreferrer"
   >
     <span
       className="absolute left-0 -translate-x-full transition-transform group-hover:translate-x-4"

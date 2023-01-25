@@ -10,7 +10,7 @@ const HowItWorks = ({ data }) => (
     </div>
     <div className="grid gap-10 lg:grid-cols-4 sm:grid-cols-2">
       {data.map((step) => (
-        <div key={step.title} className="shadow-lg rounded-md bg-white p-5">
+        <div key={step.title} className="shadow-lg rounded bg-white p-5">
           <div className="flex items-center justify-between mb-6">
             <p className={`text-2xl font-bold ${step.titleColor}`}>{step.title}</p>
             <div className={`w-8 h-8 ${step.titleColor}`} dangerouslySetInnerHTML={{ __html: step.icon || '' }} />

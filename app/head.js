@@ -9,7 +9,7 @@ const Head = () => (
     />
     <meta
       property="og:image"
-      content=""
+      content="/logo.png"
     />
   </>
 );
